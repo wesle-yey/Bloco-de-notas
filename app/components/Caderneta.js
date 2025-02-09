@@ -17,6 +17,7 @@ function Caderneta() {
                 ))}
             </div>
             <div className="conteudo">
+                <textarea></textarea>
                 <p>Este é um exemplo de conteúdo dentro da caderneta. Você pode adicionar texto, imagens ou qualquer outro elemento que desejar.</p>
             </div>
         </div>
