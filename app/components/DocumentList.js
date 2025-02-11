@@ -28,7 +28,7 @@ export default function DocumentList() {
             <ul>
                 {documents.map(document => (
                     <li key={document.id}>
-                        <Link href={`/nota/${document.id}`}>{document.title}</Link>
+                        <Link href={`/teste/${document.id}`}>{document.title}</Link>
                     </li>
                 ))}
             </ul>

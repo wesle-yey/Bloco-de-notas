@@ -1,74 +1,19 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.caderneta {
-    width: 350px;
-    height: 500px;
-    background: #fffaf5;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    border: 2px solid #000;
-}
-
-/* Espiral com buracos */
-.espiral {
-    position: absolute;
-    top: -5px; /* Alinhando ao topo */
-    left: 0;
+.caderno {
     width: 100%;
-    display: flex;
-    justify-content: space-between; /* Distribui os buracos uniformemente */
-    align-items: center;
-    padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
-}
-
-/* Estilo do buraco */
-.buraco {
-    width: 10px;
-    height: 10px;
-    background: black;
-    border-radius: 50%;
-    position: relative;
-    z-index: 2; /* Fica sobre o arame */
-}
-
-/* Arame contínuo */
-.wire {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    border-radius: 50px;
-    z-index: 1; /* Fica atrás dos buracos */
-}
-
-/* Linhas de texto */
-.linhas {
-    margin-top: 40px;
-}
-
-.linhas div {
-    width: 100%;
-    height: 20px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-/* Conteúdo da caderneta */
-.conteudo {
-    margin-top: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-}
+    min-height: 300px;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 14px 10px;
+    border: 2px solid #333;
+    background: repeating-linear-gradient(
+      white 0px, 
+      white 26px,  /* Espaço antes da linha */
+      lightgray 28px, /* Linha */
+      white 30px /* Volta ao fundo branco */
+    );
+    background-size: 100% 30px;
+    background-position: 0px 12px;
+    outline: none;
+    resize: vertical;
+    overflow:scroll;
+  }

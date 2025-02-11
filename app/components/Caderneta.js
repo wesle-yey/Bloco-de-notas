@@ -1,25 +1,43 @@
-import React from 'react';
+'use client'
+
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
+import axios from "axios";
+import { useParams } from "next/navigation";
 
 function Caderneta() {
+    const { id } = useParams();
+    const [nota, setNota] = useState("");
+    const [loading, setLoading] = useState(true);
+    const cadernoRef = useRef(null); 
+
+    useEffect(() => {
+        if (!id) return;
+
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+            .then(response => {
+                setNota(response.data || "Escreva aqui...");
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error(error);
+                setLoading(false);
+            });
+    }, [id]);
+
+    useEffect(() => {
+        if (cadernoRef.current) {
+            cadernoRef.current.innerHTML = nota.body; // Atualiza o conteúdo sem conflitos com React
+        }
+    }, [nota]);
+
+    if (loading) return <p>Carregando...</p>;
+
     return (
-        <div className="caderneta">
-            <div className="espiral">
-                <div className="wire"></div> {/* Arame contínuo */}
-                {/* Adicionando buracos dinamicamente */}
-                {[...Array(15)].map((_, index) => (
-                    <div key={index} className="buraco"></div>
-                ))}
-            </div>
-            <div className="linhas">
-                {[...Array(10)].map((_, index) => (
-                    <div key={index}></div>
-                ))}
-            </div>
-            <div className="conteudo">
-                <textarea></textarea>
-                <p>Este é um exemplo de conteúdo dentro da caderneta. Você pode adicionar texto, imagens ou qualquer outro elemento que desejar.</p>
-            </div>
+        <div>
+            <h1>{nota.title}</h1>
+        <div ref={cadernoRef} className="caderno" contentEditable="true"
+        />
         </div>
     );
 }
