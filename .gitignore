@@ -4,7 +4,4 @@
 # Arquivos de configuração local
 next-env.d.ts
 
-# features em estágio muito inicial, não são dignas de serem versionadas ainda
-teste/
-
 node_modules/
