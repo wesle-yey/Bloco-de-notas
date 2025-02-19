@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
+import Modal from "./Modal"
 
 export default function DocumentList() {
     const [documents, setDocuments] = useState([]);
@@ -24,7 +25,6 @@ export default function DocumentList() {
 
     return (
         <div>
-            <h1>Minhas notas</h1>
             <ul>
                 {documents.map(document => (
                     <li key={document.id}>
