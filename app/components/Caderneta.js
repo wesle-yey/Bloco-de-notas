@@ -14,7 +14,8 @@ function Caderneta() {
     useEffect(() => {
         if (!id) return;
 
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        //axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        axios.get(`http://localhost:8080/documentos/${id}`)
             .then(response => {
                 setNota(response.data || "Escreva aqui...");
                 setLoading(false);
@@ -27,7 +28,7 @@ function Caderneta() {
 
     useEffect(() => {
         if (cadernoRef.current) {
-            cadernoRef.current.innerHTML = nota.body; // Atualiza o conteúdo sem conflitos com React
+            cadernoRef.current.innerHTML = nota.conteudo; // Atualiza o conteúdo sem conflitos com React
         }
     }, [nota]);
 
@@ -35,7 +36,7 @@ function Caderneta() {
 
     return (
         <div>
-            <h1>{nota.title}</h1>
+            <h1>{nota.titulo}</h1>
         <div ref={cadernoRef} className="caderno" contentEditable="true"
         />
         </div>

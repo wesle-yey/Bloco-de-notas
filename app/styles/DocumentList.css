@@ -1,0 +1,80 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #ffebcd;
+  text-align: center;
+  padding: 20px;
+}
+
+.divDocumentos {
+  background: #ffb6c1;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+h1 {
+  color: #ff4500;
+  text-shadow: 2px 2px #ffa500;
+}
+
+.listaDocumentos {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listaDocumentos li {
+  background: #f0e68c;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listaDocumentos li:hover {
+  transform: scale(1.05);
+}
+
+.listaDocumentos a {
+  text-decoration: none;
+  color: #008080;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.listaDocumentos button {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.listaDocumentos button:hover {
+  background: #ff6347;
+}
+
+.caderno {
+  width: 80%;
+  min-height: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff8dc;
+  border: 2px solid #d2691e;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  outline: none;
+}

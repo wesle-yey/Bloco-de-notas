@@ -1,6 +1,8 @@
 import { useState } from "react";
+import NewPostForm from "./NewPostForm"
+import "../App.css"
 
-export default function BotaoModal() {
+export default function BotaoModal(action) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -9,9 +11,8 @@ export default function BotaoModal() {
 
       {isOpen && (
         <div className="modal-overlay">
-          <div className="modal-content">
-            <h2>Nova nota</h2>
-            <input type="text" placeholder="Nome da nota" />
+          <div className="janela-modal">
+            <NewPostForm/>
             <button onClick={() => setIsOpen(false)}>Fechar</button>
           </div>
         </div>
